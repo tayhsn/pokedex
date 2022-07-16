@@ -20,7 +20,7 @@ export const AncorGroup = styled.div`
 `;
 
 export const Ancor = styled.a`
-   color: ${theme['black-medium']};
+   color: ${theme['black-dark']};
 `;
 
 export const Logo = styled.img`
