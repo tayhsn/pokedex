@@ -20,13 +20,15 @@ export const PokecardContainer = styled.div`
 `;
 
 export const InfoContainer = styled.div`
+   width: 85%;
+   margin: 0 auto;
    font-family: 'Inter';
    font-weight: 700;
    grid-area: info;
 
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: flex-start;
    justify-content: center;
 `;
 

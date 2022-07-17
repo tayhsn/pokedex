@@ -7,7 +7,7 @@ import {
    Image,
    PokecardContainer,
 } from './Pokecard.style';
-import { POKEMON_IMAGES } from './PokeBadges';
+import { POKEMON_BADGES } from '../../assets/Pokebadges';
 import bulbasaur from '../../assets/images/bulbasaur.png';
 
 export const Pokecard = (props) => {
@@ -19,8 +19,8 @@ export const Pokecard = (props) => {
                <h1>Bulbasaur</h1>
             </div>
             <div>
-               <img src={POKEMON_IMAGES.POISON} />
-               <img src={POKEMON_IMAGES.GRASS} />
+               <img src={POKEMON_BADGES.POISON} />
+               <img src={POKEMON_BADGES.GRASS} />
             </div>
          </InfoContainer>
          <ImageContainer>
