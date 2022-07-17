@@ -4,11 +4,12 @@ import { theme } from '../../styles/theme';
 export const HeaderContainer = styled.header`
    width: 100%;
    height: 160px;
+   padding: 0 50px;
 
    background: ${theme.white};
 
    display: flex;
-   justify-content: space-around;
+   justify-content: space-between;
    align-items: center;
 `;
 
