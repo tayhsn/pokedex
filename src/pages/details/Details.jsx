@@ -16,8 +16,17 @@ import {
 } from './Details.style';
 import { POKEMON_BADGES } from '../../assets/Pokebadges';
 import bulbasaur from '../../assets/images/bulbasaur.png';
+import { useEffect, useContext } from 'react';
+import { GlobalStateContext } from '../../context-global/GlobalStateContext';
 
 export const Details = () => {
+
+   const { states, requests } = useContext(GlobalStateContext)
+
+   useEffect(() =>{
+      requests.getPokemonById(1)
+   }, [])
+
    return (
       <>
          <Header page='details' />
