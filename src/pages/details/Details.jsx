@@ -24,7 +24,7 @@ export const Details = () => {
    const { states, requests } = useContext(GlobalStateContext)
 
    useEffect(() =>{
-      requests.getPokemonById(1)
+      requests.getPokemonByName(1)
    }, [])
 
    return (
