@@ -73,7 +73,9 @@ export const Button = styled.button`
    justify-content: center;
    align-items: center;
 
-   background: ${theme.white};
-   color: ${theme['black-medium']};
+   background: ${(props) =>
+      props.action === 'Capturar' ? theme.white : theme.red};
+   color: ${(props) =>
+      props.action === 'Capturar' ? theme['black-medium'] : theme.white};
    font-weight: 400;
 `;
