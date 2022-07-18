@@ -15,8 +15,8 @@ export const Pokecard = (props) => {
       <PokecardContainer>
          <InfoContainer>
             <div>
-               <p>#01</p>
-               <h1>Bulbasaur</h1>
+               <p>#{props.id}</p>
+               <h1>{props.name}</h1>
             </div>
             <div>
                <img src={POKEMON_BADGES.POISON} />
@@ -24,11 +24,11 @@ export const Pokecard = (props) => {
             </div>
          </InfoContainer>
          <ImageContainer>
-            <Image src={bulbasaur} />
+            <Image src={props.image} />
          </ImageContainer>
          <ActionContainer>
             <Ancor href=''>Detalhes</Ancor>
-            <Button>Capturar!</Button>
+            <Button action={props.action}>{props.action}!</Button>
          </ActionContainer>
       </PokecardContainer>
    );
