@@ -16,11 +16,12 @@ export const Home = () => {
          <Header page='home' />
          <PageTitle>Todos pokémons</PageTitle>
          <HomeContainer>
-            {states.pokemonImages.map((poke, index) => (
+            {states.pokemon.map((poke, index) => (
                <Pokecard
                   key={index}
                   id={index + 1}
                   name={poke.name}
+                  types={poke.types}
                   image={poke.image}
                   action='Capturar'
                />

@@ -5,23 +5,27 @@ import { GlobalStateContext } from './GlobalStateContext';
 const URL = 'https://pokeapi.co/api/v2/pokemon';
 
 export const GlobalState = (props) => {
-   const [pokemons, setPokemons] = useState([]);
+   const [pokemon, setPokemon] = useState([]);
    const [pokemonDetails, setPokemonDetails] = useState([]);
-   const [pokemonImages, setPokemonImages] = useState([])
 
    const getAllPokemons = () => {
       axios
          .get(URL)
          .then((response) => {
-            setPokemons(response.data.results)
-
-            let pokeArray = []
-            response.data.results.map(async(poke) =>{
-                const response = await axios.get(poke.url)
-                pokeArray = [...pokeArray, { name: poke.name, image: response.data.sprites.front_default, types: response.data.types}]
-                console.log(pokeArray)
-            })
-        })
+            let pokeArray = [];
+            response.data.results.map(async (poke) => {
+               const response = await axios.get(poke.url);
+               pokeArray = [
+                  ...pokeArray,
+                  {
+                     name: poke.name,
+                     image: response.data.sprites.front_default,
+                     types: response.data.types,
+                  },
+               ];
+               setPokemon(pokeArray);
+            });
+         })
          .catch((error) => error.message);
    };
 
@@ -32,7 +36,7 @@ export const GlobalState = (props) => {
          .catch((error) => console.log(error.message));
    };
 
-   const states = { pokemons, pokemonDetails, pokemonImages };
+   const states = { pokemon, pokemonDetails };
    const requests = { getAllPokemons, getPokemonByName };
 
    return (

@@ -8,9 +8,14 @@ import {
    PokecardContainer,
 } from './Pokecard.style';
 import { POKEMON_BADGES } from '../../assets/Pokebadges';
-import bulbasaur from '../../assets/images/bulbasaur.png';
+import { goToDetailsPage } from '../../router/coordinator';
+import { useNavigate } from 'react-router-dom';
 
 export const Pokecard = (props) => {
+   const navigate = useNavigate();
+
+   const badges = props.types.map((type) => console.log(type.type.name));
+
    return (
       <PokecardContainer>
          <InfoContainer>
@@ -18,16 +23,13 @@ export const Pokecard = (props) => {
                <p>#{props.id}</p>
                <h1>{props.name}</h1>
             </div>
-            <div>
-               <img src={POKEMON_BADGES.POISON} />
-               <img src={POKEMON_BADGES.GRASS} />
-            </div>
+            <div></div>
          </InfoContainer>
          <ImageContainer>
             <Image src={props.image} />
          </ImageContainer>
          <ActionContainer>
-            <Ancor href=''>Detalhes</Ancor>
+            <Ancor href={goToDetailsPage(navigate, props.name)}>Detalhes</Ancor>
             <Button action={props.action}>{props.action}!</Button>
          </ActionContainer>
       </PokecardContainer>
