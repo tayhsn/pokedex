@@ -29,7 +29,9 @@ export const Pokecard = (props) => {
             <Image src={props.image} />
          </ImageContainer>
          <ActionContainer>
-            <Ancor href={goToDetailsPage(navigate, props.name)}>Detalhes</Ancor>
+            <Ancor href={() => goToDetailsPage(navigate, props.name)}>
+               Detalhes
+            </Ancor>
             <Button action={props.action}>{props.action}!</Button>
          </ActionContainer>
       </PokecardContainer>
