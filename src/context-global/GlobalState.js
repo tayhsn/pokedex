@@ -40,7 +40,7 @@ export const GlobalState = (props) => {
 
   const states = { pokedex, pokemon, pokemonDetails, page }
   const requests = { getAllPokemons, getPokemonByName }
-  const setters = { setPage }
+  const setters = { setPage, setPokedex }
 
   return (
     <GlobalStateContext.Provider value={{ states, requests, setters }}>

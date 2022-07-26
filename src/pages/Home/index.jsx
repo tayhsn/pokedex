@@ -8,7 +8,7 @@ export const Home = () => {
 
   useEffect(() => {
     requests.getAllPokemons()
-  }, [])
+  }, [requests])
 
   return (
     <>

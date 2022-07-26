@@ -22,7 +22,7 @@ export const Details = () => {
 
   useEffect(() => {
     requests.getPokemonByName(1)
-  }, [])
+  }, [requests])
 
   return (
     <>

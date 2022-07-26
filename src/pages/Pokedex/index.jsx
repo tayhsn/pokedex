@@ -8,7 +8,7 @@ export const Pokedex = () => {
 
   useEffect(() => {
     requests.getAllPokemons()
-  }, [])
+  }, [requests])
 
   return (
     <>

@@ -3,15 +3,15 @@ import pokebola from "../../assets/images/pokebola.png"
 import { theme } from "../../styles/theme"
 
 export const PokecardContainer = styled.div`
-  width: 440px;
-  height: 210px;
+  width: 27.5rem;
+  height: 13.125rem;
   border-radius: 12px;
 
   background: ${theme["green-light"]};
 
   display: grid;
-  grid-template-columns: 1fr 210px;
-  grid-template-rows: 1fr 50px;
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: 1fr 70px;
   grid-template-areas:
     "info image"
     "action action";
@@ -20,8 +20,9 @@ export const PokecardContainer = styled.div`
 `
 
 export const InfoContainer = styled.div`
-  width: 85%;
+  width: 80%;
   margin: 0 auto;
+
   font-family: "Inter";
   font-weight: 700;
   grid-area: info;
@@ -32,15 +33,22 @@ export const InfoContainer = styled.div`
   justify-content: center;
 `
 
+export const BadgeContainer = styled.div`
+  margin: 5px 0;
+  display: flex;
+  gap: 0 5px;
+  flex-wrap: nowrap;
+`
+
 export const ImageContainer = styled.div`
-  width: 210.73px;
+  width: 13.125rem;
   position: relative;
-  background: url(${pokebola}) 100%;
+  background: url(${pokebola}) center;
   grid-area: image;
 `
 
 export const Image = styled.img`
-  width: 193px;
+  width: 100%;
   margin: 0 auto;
 
   position: absolute;
@@ -48,15 +56,12 @@ export const Image = styled.img`
 `
 
 export const ActionContainer = styled.div`
-  width: 85%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   justify-self: center;
   grid-area: action;
-
-  position: absolute;
-  bottom: 20px;
 `
 
 export const BaseButton = styled.button`
@@ -77,12 +82,12 @@ export const DetailsButton = styled(BaseButton)`
 `
 
 export const CaptureButton = styled(BaseButton)`
-  background: ${(props) => props.theme.white};
-  color: ${(props) => props.theme["black-medium"]};
+  background: ${theme.white};
+  color: ${theme["black-medium"]};
   font-weight: 400;
 `
 export const DeleteButton = styled(BaseButton)`
-  background: ${(props) => props.theme.red};
-  color: ${(props) => props.theme.white};
+  background: ${theme.red};
+  color: ${theme.white};
   font-weight: 400;
 `
